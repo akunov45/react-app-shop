@@ -3,7 +3,8 @@ function Footer (){
         <div className="footer-copyright">
             <div className="container">
                 © {new Date().getFullYear()} Created by Akunov
-                <a className="grey-text text-lighten-4 right" href="#!">Repo</a>
+                <a className="grey-text text-lighten-4 right"
+                   href="https://github.com/frontdevkg/react-shop" rel='noreferrer' target='_blank'>Repo</a>
             </div>
         </div>
     </footer>
