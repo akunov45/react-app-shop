@@ -49,30 +49,31 @@ function Shop() {
         setOrder(newOrder)
     }
 
-    const addToBusket = (item) => {
-        const itemIndex = order.findIndex(orderItem => orderItem.id === item.id)
-        if (itemIndex < 0) {
-            const newProduct = {
-                ...item,
-                count: 1
-            }
-            setOrder([...order, newProduct])
-        } else {
-            const newOrder = order.map((orderItem, index) => {
+    // const addToBusket = (item) => {
+    //     const itemIndex = order.findIndex(orderItem => orderItem.id === item.id)
+    //     if (itemIndex < 0) {
+    //         const newProduct = {
+    //             ...item,
+    //             count: 1
+    //         }
+    //         setOrder([...order, newProduct])
+    //     } else {
+    //         const newOrder = order.map((orderItem, index) => {
+    //
+    //             if (index === itemIndex) {
+    //                 return {
+    //                     ...orderItem,
+    //                     count: orderItem.count + 1,
+    //                 }
+    //             } else {
+    //                 return orderItem
+    //             }
+    //         })
+    //         setOrder(newOrder)
+    //     }
+    //     setAlertName(item.name)
+    // }
 
-                if (index === itemIndex) {
-                    return {
-                        ...orderItem,
-                        count: orderItem.count + 1,
-                    }
-                } else {
-                    return orderItem
-                }
-            })
-            setOrder(newOrder)
-        }
-        setAlertName(item.name)
-    }
     useEffect(function getGoods() {
         fetch(API_URL, {
             headers: {
@@ -97,7 +98,6 @@ function Shop() {
 
         {loading ? <Preloader/> :
             <GoodsList
-                addToBasket={addToBusket}
                 goods={goods}
                 key={goods.map(item => item.mainId)}/>}
         {isBasketShow &&  <BasketList
