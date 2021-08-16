@@ -1,7 +1,7 @@
 {
   "name": "react-app-story",
   "version": "0.1.0",
-  "home": "https://frontdevkg.github.io/react-shop",
+  "homepage": "https://frontdevkg.github.io/react-app-shop",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
